@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repostería </title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Repostería *nombre*</h1>
+    </header>
+
+    
+    <form id="orderForm" novalidate>
+      <h2>Registrar orden</h2>
+      <fieldset>
+        <legend>Datos personales</legend>
+        <div class="row col-3">
+          <div class="campo">
+            <label for="nombres">Nombres <span class="req">*</span></label>
+            <input type="text" id="nombres" name="nombres" placeholder="Juan" required>
+          </div>
+          <div class="campo">
+            <label for="apellidos">Apellidos <span class="req">*</span></label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Pérez" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono <span class="req">*</span></label>
+            <input type="number" id="telefono" name="telefono" placeholder="3006009000" required>
+          </div>
+        </div>
+
+        <div class="row col-2">
+          <div class="campo">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="correo@email.com">
+          </div>
+          <div class="campo">
+            <label for="direccion">Dirección <span class="req">*</span></label>
+            <input type="text" id="direccion" name="direccion" placeholder="Calle 50 # 78 – 66" required>
+          </div>
+        </div>
+
+        <div class="row col-1">
+          <div class="campo">
+            <label for="detalleDireccion">Detalle de dirección</label>
+            <input type="text" id="detalleDireccion" name="detalleDireccion" placeholder="Ed. El altar, apto 201">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Detalle del pedido</legend>
+
+        <div class="row col-4">
+          <div class="campo">
+            <label for="fechaPedido">Fecha <span class="req">*</span></label>
+            <input type="date" id="fechaPedido" name="fechaPedido" required>
+          </div>
+          <div class="campo">
+            <label for="horaPedido">Hora <span class="req">*</span></label>
+            <input type="time" id="horaPedido" name="horaPedido" required>
+          </div>
+          <div class="campo">
+            <label for="cantidad">Cantidad <span class="req">*</span></label>
+            <input type="number" id="cantidad" name="cantidad" min="1" placeholder="1" required>
+          </div>
+          <div class="campo">
+            <label for="tamano">Tamaño</label>
+            <select id="tamano" name="tamano">
+              <option value="" disabled selected>—</option>
+              <option value="S">S · Pequeño</option>
+              <option value="M">M · Mediano</option>
+              <option value="L">L · Grande</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row col-2">
+          <div class="campo">
+            <label for="producto">Producto <span class="req">*</span></label>
+            <select id="producto" name="producto" required>
+              <option value="" disabled selected>Seleccionar…</option>
+              <option>Torta personalizada</option>
+              <option>Caja de alfajores</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label>Opciones</label>
+            <div class="check-group">
+              <label class="check-item">
+                <input type="checkbox" id="aptoAlergias" name="aptoAlergias">
+                Contiene alérgenos
+              </label>
+              <label class="check-item">
+                <input type="checkbox" id="aptoDiabeticos" name="aptoDiabeticos">
+                Apto para diabéticos
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div id="alergiasBlock">
+          <div class="campo">
+            <label for="detalleAlergias">Detalle de alergias</label>
+            <textarea id="detalleAlergias" name="detalleAlergias" placeholder="Ej: maní, nueces, lactosa…"></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" onclick="resetForm()">Limpiar</button>
+          <button type="submit">Registrar orden</button>
+        </div>
+      </fieldset>
+
+    </form>
+
+    <div id="exito">Orden registrada</div>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
