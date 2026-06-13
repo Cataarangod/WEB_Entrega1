@@ -10,6 +10,35 @@ document.getElementById('aptoAlergias').addEventListener('change', function () {
   document.getElementById('alergiasBlock').style.display = this.checked ? 'block' : 'none';
 });
 
+// Acerca de
+const openButton = document.getElementById('open-about');
+const closeButton = document.getElementById('close-about');
+const aboutPopup = document.getElementById('about-popup');
+
+openButton.addEventListener('click', () => {
+  if (typeof aboutPopup.showModal === 'function') {
+    aboutPopup.showModal();
+  } else {
+    aboutPopup.setAttribute('open', '');
+  }
+});
+
+closeButton.addEventListener('click', () => {
+  aboutPopup.close();
+});
+
+aboutPopup.addEventListener('click', (event) => {
+  const rect = aboutPopup.getBoundingClientRect();
+  const clickFuera = event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom;
+
+  if (clickFuera) {
+    aboutPopup.close();
+  }
+});
+
 // Enviar formulario
 document.getElementById('orderForm').addEventListener('submit', function (e) {
   e.preventDefault();

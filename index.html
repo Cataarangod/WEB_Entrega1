@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repostería </title>
+    <title>Sabores y Sentidos Repostería</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
 
     <header>
-      <h1>Repostería *nombre*</h1>
+      <h1>Sabores y Sentidos Repostería</h1>
     </header>
+
+    <button class="help-icon" type="button" id="open-about" aria-label="Sobre nosotros">?</button>
+
+    <dialog id="about-popup">
+      <section class="about-section">
+        <button class="close-button" type="button" id="close-about" aria-label="Cerrar">×</button>
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una repostería artesanal, familiar y casera creada con cariño desde el año 2026.</p>
+        <p>Preparamos cada postre con amor, dedicación y sabores sencillos que se sienten como hogar.</p>
+        <p>Realizamos productos aptos para diabéticos, no diabéticos y celíacos.</p>
+        <p>Autoras: Marycielo y Catalina.</p>
+        <img src="logo.png" alt="Logo de Sabores y Sentidos" class="about-image">
+      </section>
+    </dialog>
 
     
     <form id="orderForm" novalidate>
